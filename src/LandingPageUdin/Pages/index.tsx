@@ -8,6 +8,7 @@ import CamingSon from "./ComingSon";
 import Navbar from "../Components/Navbar";
 import Manfaat from "../Components/Manfaat";
 import MerchantBisnis from "../Components/merchantBisnis";
+import Regulasi from "../Components/Regulasi";
 
 const HEADER_HEIGHT = 96;
 const LandingPageUdin: React.FC = () => {
@@ -19,6 +20,7 @@ const LandingPageUdin: React.FC = () => {
   const fiturRef = useRef<HTMLDivElement>(null);
   const tentangKamiRef = useRef<HTMLDivElement>(null);
   const manfaatRef = useRef<HTMLDivElement>(null);
+  const regulasiRef = useRef<HTMLDivElement>(null);
   const bantuanRef = useRef<HTMLDivElement>(null);
   const MerchantBisnisRef = useRef<HTMLDivElement>(null);
 
@@ -41,6 +43,7 @@ const LandingPageUdin: React.FC = () => {
         Tentang: fiturRef,
         Model: tentangKamiRef,
         Manfaat: manfaatRef,
+        Regulasi: regulasiRef,
         Bantuan: bantuanRef,
       }[page];
 
@@ -56,7 +59,7 @@ const LandingPageUdin: React.FC = () => {
   };
 
   return (
-    <section className="max-w-[1440px] mx-auto">
+    <section className="max-w-[1440px] mx-auto ">
       <div className="fixed top-0 left-0 w-full z-40 bg-white">
         <Navbar currentPage={currentPage} isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} setIsMenuOpen={setIsMenuOpen} />
       </div>
@@ -81,6 +84,9 @@ const LandingPageUdin: React.FC = () => {
             </div>
             <div ref={manfaatRef}>
               <Manfaat />
+            </div>
+            <div ref={regulasiRef}>
+              <Regulasi />
             </div>
 
             <div ref={bantuanRef}>
